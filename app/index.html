@@ -5,8 +5,18 @@
     <title>Google Phone Gallery</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app.animations.css" />
+
+    <!-- Used for JavaScript animations (include this before angular.js) -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <!-- Adds animation support in AngularJS -->
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+
+    
     <script src="app.module.js"></script>
     <script src="app.config.js"></script>
     
@@ -15,9 +25,14 @@
 
     <script src="phone-detail/phone-detail.module.js"></script>
     <script src="phone-detail/phone-detail.component.js"></script>
+    <!-- Defines JavaScript animations -->
+    <script src="app.animations.js"></script>
 
     <script src="core/core.module.js"></script>
     <script src="core/checkmark/checkmark.filter.js"></script>
+
+    <script src="core/phone/phone.module.js"></script>
+  <script src="core/phone/phone.service.js"></script>
 
   </head>
   <body>
@@ -27,7 +42,9 @@
     {{1459461289000 | date:'MM/dd/yyyy @ h:mma'}} -->
 
     <!-- <input ng-model="userInput" /> Uppercased: {{userInput | uppercase}} -->
-    <div ng-view></div>
+    <div class="view-container">
+  <div ng-view class="view-frame"></div>
+</div>
   
   </body>
 </html>
